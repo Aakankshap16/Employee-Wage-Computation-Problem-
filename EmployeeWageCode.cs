@@ -9,6 +9,7 @@ namespace EmployeeWageComputation
     internal class EmployeeWageCode
     {
         public const int is_Full_Time = 1;
+        public const int is_Part_Time = 2;
         public const int EmpRatePerHr = 20;
         public static void EmployeeAttendence()
         {
@@ -17,10 +18,14 @@ namespace EmployeeWageComputation
             int empWage = 0;
             int empHrs = 0;
             Random random = new Random();
-            int empCheck = random.Next(2);
+            int empCheck = random.Next(3);
             if (empCheck == is_Full_Time)
             {
                 empHrs = 8;
+            }
+            else if (empCheck == is_Part_Time)
+            {
+                empHrs = 4;
             }
             else
             {
