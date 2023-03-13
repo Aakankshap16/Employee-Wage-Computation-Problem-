@@ -11,12 +11,18 @@ namespace EmployeeWageComputation
         public const int is_Full_Time = 1;
         public const int is_Part_Time = 2;
         public const int EmpRatePerHr = 20;
+        public const int NumOfWorkingDays = 20;
         public static void EmployeeAttendence()
         {
-            
-           
+
+
             int empWage = 0;
             int empHrs = 0;
+            int totalEmpWage = 0;
+
+            for (int days =0; days < NumOfWorkingDays; days++)
+            { 
+
             Random random = new Random();
             int empCheck = random.Next(3);
             switch (empCheck)
@@ -42,9 +48,18 @@ namespace EmployeeWageComputation
                         empHrs = 0;
                         break;
                     }
+
+              
             }
-            empWage = empHrs * EmpRatePerHr;
-            Console.WriteLine("wages of employee is :" + empWage);
+                
+                
+                empWage = empHrs * EmpRatePerHr;
+                totalEmpWage += empWage;
+                Console.WriteLine("{0} day and his Emp wages of employee is {1}Rs :" ,days, empWage);
+            }
+            Console.WriteLine("wages of employee per month is " + totalEmpWage);
+
+
         }
     }
 }
